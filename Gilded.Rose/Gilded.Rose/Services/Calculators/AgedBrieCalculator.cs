@@ -1,19 +1,19 @@
 ﻿using Gilded.Rose.Conracts;
 
-namespace Gilded.Rose.Services.Updaters
+namespace Gilded.Rose.Services.Calculators
 {
-    public class ConjuredCalculator : ICalculator
+    public class AgedBrieCalculator : ICalculator
     {
        
 
         public int CalculateQuality(int sellIn, int quality)
         {
-            throw new System.NotImplementedException();
+            return quality + 1;
         }
 
         public int CalculateSellIn(int sellIn)
         {
-            throw new System.NotImplementedException();
+            return sellIn - 1;
         }
     }
 }

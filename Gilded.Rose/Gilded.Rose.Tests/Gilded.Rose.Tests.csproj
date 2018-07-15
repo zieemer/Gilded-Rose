@@ -53,10 +53,15 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppTest.cs" />
     <Compile Include="Factories\StockFactoryTest.cs" />
     <Compile Include="Services\AgedBrieCalculatorTests.cs" />
+    <Compile Include="Services\BackStagePassesCalculatorTest.cs" />
+    <Compile Include="Services\ConjuretCalulatorTests.cs" />
+    <Compile Include="Services\SulfrasItemUpdateTests.cs" />
     <Compile Include="Services\NormalItemCalculatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\ValidatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

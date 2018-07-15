@@ -6,7 +6,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Gilded.Rose.Conracts;
-using Gilded.Rose.Services.Updaters;
 
 namespace Gilded.Rose.Factories
 {
@@ -27,7 +26,7 @@ namespace Gilded.Rose.Factories
 
             if (t == null)
             {
-               return  new InvalidItemCalculator();
+                return null;
             }
             else
             {

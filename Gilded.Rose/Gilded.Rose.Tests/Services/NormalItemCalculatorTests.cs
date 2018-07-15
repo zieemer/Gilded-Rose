@@ -1,4 +1,5 @@
 ﻿using Gilded.Rose.Models;
+using Gilded.Rose.Services;
 using NUnit.Framework;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
@@ -21,12 +22,13 @@ namespace Gilded.Rose.Tests.Services
 
         public void ShouldCalulateInventory(int sellIn, int quality, int resultSellIn, int resultQuality)
         {
-            var sut = new StockItem("Normal Item", sellIn, quality);
+            var item = new StockItem("Normal Item", sellIn, quality);
 
-            sut.Update();
+            var sut = new StockUpdater();
+            sut.Update(item);
 
-            Assert.AreEqual(resultSellIn, sut.SellIn);
-            Assert.AreEqual(resultQuality, sut.Quality);
+            Assert.AreEqual(resultSellIn, item.SellIn);
+            Assert.AreEqual(resultQuality, item.Quality);
 
         }
 

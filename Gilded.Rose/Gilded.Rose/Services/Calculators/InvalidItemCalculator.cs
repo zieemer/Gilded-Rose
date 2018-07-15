@@ -2,18 +2,18 @@
 
 namespace Gilded.Rose.Services.Updaters
 {
-    public class BackStagePassesCalculator : ICalculator
+    public class InvalidItemCalculator : ICalculator
     {
        
 
         public int CalculateQuality(int sellIn, int quality)
         {
-            throw new System.NotImplementedException();
+            return quality;
         }
 
         public int CalculateSellIn(int sellIn)
         {
-            throw new System.NotImplementedException();
+            return sellIn;
         }
     }
 }

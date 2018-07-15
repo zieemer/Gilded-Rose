@@ -1,6 +1,6 @@
 ﻿using Gilded.Rose.Conracts;
 
-namespace Gilded.Rose.Services.Updaters
+namespace Gilded.Rose.Services.Calculators
 {
     public class NormalItemCalculator : ICalculator
     {

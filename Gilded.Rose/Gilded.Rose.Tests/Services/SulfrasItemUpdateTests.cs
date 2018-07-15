@@ -1,27 +1,25 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Gilded.Rose.Models;
+﻿using Gilded.Rose.Models;
 using Gilded.Rose.Services;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-using TestContext = Microsoft.VisualStudio.TestTools.UnitTesting.TestContext;
 
-namespace Gilded.Rose.Tests
+namespace Gilded.Rose.Tests.Services
 {
     /// <summary>
     /// Summary description for NormalItemCalculatorTests
     /// </summary>
     [TestFixture]
-    public class AgedBrieCalculatorTests
+    public class SulfrasItemUpdateTests
     {
        
-        
-        [TestCase(1, 1, 0, 2)]
+
+
+        [TestCase(2, 55, 2,50)]
+        [TestCase(2, 2, 2, 2)]
+
         public void ShouldCalulateInventory(int sellIn, int quality, int resultSellIn, int resultQuality)
         {
-            var item = new StockItem("Aged Brie", sellIn, quality);
+            var item = new StockItem("Sulfuras", sellIn, quality);
 
             var sut = new StockUpdater();
             sut.Update(item);

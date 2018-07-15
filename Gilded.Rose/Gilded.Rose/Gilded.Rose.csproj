@@ -43,19 +43,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conracts\ICalculator.cs" />
-    <Compile Include="Conracts\IReport.cs" />
-    <Compile Include="Factories\StockItemFactory.cs" />
+    <Compile Include="Factories\CalculatorsFactory.cs" />
+    <Compile Include="Conracts\IQualityValidator.cs" />
+    <Compile Include="Services\StockUpdater.cs" />
+    <Compile Include="Services\Validators\QualityValidator.cs" />
     <Compile Include="Models\StockItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Reports\StockReport.cs" />
-    <Compile Include="Services\UnvalidStockReport.cs" />
-    <Compile Include="Services\Updaters\AgedBrieCalculator.cs" />
-    <Compile Include="Services\Updaters\BackStagePassesCalculator.cs" />
-    <Compile Include="Services\Updaters\SulfurasCalculator.cs" />
-    <Compile Include="Services\Updaters\InvalidItemCalculator.cs" />
-    <Compile Include="Services\Updaters\ConjuredCalculator.cs" />
-    <Compile Include="Services\Updaters\NormalItemCalculator.cs" />
+    <Compile Include="Services\Calculators\AgedBrieCalculator.cs" />
+    <Compile Include="Services\Calculators\BackStagePassesCalculator.cs" />
+    <Compile Include="Services\Calculators\SulfurasCalculator.cs" />
+    <Compile Include="Services\Calculators\ConjuredCalculator.cs" />
+    <Compile Include="Services\Calculators\NormalItemCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

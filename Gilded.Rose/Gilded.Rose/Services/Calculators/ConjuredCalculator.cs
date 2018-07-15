@@ -1,14 +1,15 @@
 ﻿using Gilded.Rose.Conracts;
 
-namespace Gilded.Rose.Services.Updaters
+namespace Gilded.Rose.Services.Calculators
 {
-    public class AgedBrieCalculator : ICalculator
+    public class ConjuredCalculator : ICalculator
     {
        
 
         public int CalculateQuality(int sellIn, int quality)
         {
-            return quality + 1;
+            quality = sellIn < 0 ? quality - 4 : quality - 2;
+            return quality;
         }
 
         public int CalculateSellIn(int sellIn)

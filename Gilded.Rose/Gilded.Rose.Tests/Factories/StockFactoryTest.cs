@@ -1,6 +1,6 @@
 ﻿using System;
 using Gilded.Rose.Factories;
-using Gilded.Rose.Services.Updaters;
+using Gilded.Rose.Services.Calculators;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
@@ -12,16 +12,24 @@ namespace Gilded.Rose.Tests.Factories
     {
         [TestCase("NormalItem", typeof(NormalItemCalculator))]
         [TestCase("Sulfuras", typeof(SulfurasCalculator))]
-        [TestCase("InvalidItem", typeof(InvalidItemCalculator))]
         public void ShouldFactoryReturnCalculator(string stockItemName, Type type )
         {
             var sut = new CalculatorsFactory();
 
-            var normalItemUpdater = sut.GetInstance(stockItemName);
+            var calculator = sut.GetInstance(stockItemName);
 
-            Assert.IsInstanceOfType(normalItemUpdater, type);
+            Assert.IsInstanceOfType(calculator, type);
         }
 
+        [Test]
+        public void ShouldFacttoryRetunrNullForUnknowType()
+        {
+            var sut = new CalculatorsFactory();
+
+            var calculator = sut.GetInstance("invalid");
+
+            Assert.IsNull(calculator);
+        }
        
     }
 }

@@ -1,29 +1,30 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Gilded.Rose.Models;
+﻿using Gilded.Rose.Models;
 using Gilded.Rose.Services;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-using TestContext = Microsoft.VisualStudio.TestTools.UnitTesting.TestContext;
 
-namespace Gilded.Rose.Tests
+namespace Gilded.Rose.Tests.Services
 {
     /// <summary>
     /// Summary description for NormalItemCalculatorTests
     /// </summary>
     [TestFixture]
-    public class AgedBrieCalculatorTests
+    public class BackStagePassesCalculatorTest
     {
        
-        
-        [TestCase(1, 1, 0, 2)]
+
+        [TestCase(11, 10, 10,11)]
+        [TestCase(10, 2, 9, 4)]
+        [TestCase(5, 2, 4, 5)]
+        [TestCase(0, 10, -1, 0)]
+
+
         public void ShouldCalulateInventory(int sellIn, int quality, int resultSellIn, int resultQuality)
         {
-            var item = new StockItem("Aged Brie", sellIn, quality);
+            var item = new StockItem("Backstage Passes", sellIn, quality);
 
             var sut = new StockUpdater();
+
             sut.Update(item);
 
             Assert.AreEqual(resultSellIn, item.SellIn);

@@ -1,19 +1,19 @@
 ﻿using Gilded.Rose.Conracts;
 
-namespace Gilded.Rose.Services.Updaters
+namespace Gilded.Rose.Services.Calculators
 {
-    public class InvalidItemCalculator : ICalculator
+    public class SulfurasCalculator : ICalculator
     {
        
 
         public int CalculateQuality(int sellIn, int quality)
         {
-            throw new System.NotImplementedException();
+            return quality;
         }
 
         public int CalculateSellIn(int sellIn)
         {
-            throw new System.NotImplementedException();
+            return sellIn;
         }
     }
 }
