@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Gilded.Rose.Models;
+﻿using Gilded.Rose.Models;
 using Gilded.Rose.Services;
+using System;
+using System.Collections.Generic;
 
 namespace Gilded.Rose
 {
@@ -12,7 +9,7 @@ namespace Gilded.Rose
     {
         static void Main(string[] args)
         {
-            var updater = new StockUpdater();
+            var stockUpdater = new StockUpdater();
             var items = new List<StockItem>()
             {
                 new StockItem("AgedBrie",1,1),
@@ -32,9 +29,10 @@ namespace Gilded.Rose
 
             foreach (var stockItem in items)
             {
-               Console.WriteLine(updater.Update(stockItem));
+               Console.WriteLine(stockUpdater.Update(stockItem));
             }
-
+            Console.WriteLine("-------------------------------");
+            Console.WriteLine("Please press a key to close app");
             Console.ReadKey();
         }
     }

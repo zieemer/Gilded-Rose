@@ -1,11 +1,7 @@
-﻿using System;
+﻿using Gilded.Rose.Conracts;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Gilded.Rose.Conracts;
 
 namespace Gilded.Rose.Factories
 {
@@ -18,7 +14,11 @@ namespace Gilded.Rose.Factories
             GetCalculators();
         }
 
-
+        /// <summary>
+        /// Create a instance of stock calculator depends on stock name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public ICalculator GetInstance(string name)
         {
             string typeName = name.Replace(" ","").ToLower() + "calculator";

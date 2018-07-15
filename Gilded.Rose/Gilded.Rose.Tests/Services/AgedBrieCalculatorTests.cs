@@ -3,10 +3,9 @@ using System.Text;
 using System.Collections.Generic;
 using Gilded.Rose.Models;
 using Gilded.Rose.Services;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using NUnit.Framework;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-using TestContext = Microsoft.VisualStudio.TestTools.UnitTesting.TestContext;
+
 
 namespace Gilded.Rose.Tests
 {

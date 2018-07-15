@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Gilded.Rose.Conracts;
+﻿using Gilded.Rose.Conracts;
 using Gilded.Rose.Factories;
 using Gilded.Rose.Models;
 using Gilded.Rose.Services.Validators;
@@ -13,8 +8,10 @@ namespace Gilded.Rose.Services
     public class StockUpdater
     {
         
-        private readonly IQualityValidator _validator;
+        
         private readonly CalculatorsFactory _factory;
+        //TODO eventually resolve using IOC
+        private readonly IQualityValidator _validator;
 
         public StockUpdater()
         {
@@ -22,22 +19,29 @@ namespace Gilded.Rose.Services
             _factory = new CalculatorsFactory();
         }
 
+
+
         private int ValidateQuality(int value)
         {
             return _validator.ValidateQuality(value);
         }
 
 
-        public string Update(StockItem item)
+        /// <summary>
+        /// Updating stockItem and displaying result
+        /// </summary>
+        /// <param name="stockItem"></param>
+        /// <returns></returns>
+        public string Update(StockItem stockItem)
         {
 
-            var calculator = _factory.GetInstance(item.Name);
+            var calculator = _factory.GetInstance(stockItem.Name);
 
             if (calculator != null)
             {
-                item.Quality = ValidateQuality(calculator.CalculateQuality(item.SellIn, item.Quality));
-                item.SellIn = calculator.CalculateSellIn(item.SellIn);
-                return ($"{item.Name} {item.SellIn} {item.Quality}");
+                stockItem.Quality = ValidateQuality(calculator.CalculateQuality(stockItem.SellIn, stockItem.Quality));
+                stockItem.SellIn = calculator.CalculateSellIn(stockItem.SellIn);
+                return ($"{stockItem.Name} {stockItem.SellIn} {stockItem.Quality}");
             }
             else
             {

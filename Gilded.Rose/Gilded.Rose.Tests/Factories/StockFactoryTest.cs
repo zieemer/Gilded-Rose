@@ -1,9 +1,9 @@
 ﻿using System;
 using Gilded.Rose.Factories;
 using Gilded.Rose.Services.Calculators;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using NUnit.Framework;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
+
 
 namespace Gilded.Rose.Tests.Factories
 {
@@ -18,7 +18,7 @@ namespace Gilded.Rose.Tests.Factories
 
             var calculator = sut.GetInstance(stockItemName);
 
-            Assert.IsInstanceOfType(calculator, type);
+            Assert.IsInstanceOf(type, calculator);
         }
 
         [Test]

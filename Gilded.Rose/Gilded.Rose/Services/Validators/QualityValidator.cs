@@ -1,5 +1,4 @@
 ﻿using Gilded.Rose.Conracts;
-using Gilded.Rose.Models;
 
 namespace Gilded.Rose.Services.Validators
 {
