@@ -1,20 +1,21 @@
 ﻿using Gilded.Rose.Conracts;
+using Gilded.Rose.Services.Calculators.Validators;
 
 namespace Gilded.Rose.Services.Calculators
 {
-    public class NormalItemCalculator : ICalculator
+    public class NormalItemCalculator : QualityValidator,  ICalculator
     {
-       
+        
 
         public int CalculateQuality(int sellIn, int quality)
         {
             if (sellIn > 0)
             {
-                return quality - 1;
+                return ValidateQuality(quality - 1);
             }
             else
             {
-                return quality - 2;
+                return ValidateQuality(quality - 2);
 
             }
         }
@@ -23,5 +24,7 @@ namespace Gilded.Rose.Services.Calculators
         {
             return sellIn - 1;
         }
+
+
     }
 }

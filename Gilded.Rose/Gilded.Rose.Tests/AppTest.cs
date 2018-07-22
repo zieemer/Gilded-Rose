@@ -13,12 +13,14 @@ namespace Gilded.Rose.Tests
     [TestFixture]
     public class AppTest
     {
-        private StockUpdater sut;
+        private IStockUpdater sut;
 
         [SetUp]
         public void Init()
         {
-            sut = new StockUpdater();
+            DependencyResolver.Setup();
+            sut = DependencyResolver.Get<IStockUpdater>();
+           
         }
 
         [TestCase("Aged Brie",1,1, "Aged Brie 0 2")]

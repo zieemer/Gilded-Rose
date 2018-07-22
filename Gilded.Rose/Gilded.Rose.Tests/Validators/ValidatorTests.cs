@@ -1,4 +1,4 @@
-﻿using Gilded.Rose.Services.Validators;
+﻿using Gilded.Rose.Services.Calculators.Validators;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 

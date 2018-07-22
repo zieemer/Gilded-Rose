@@ -10,11 +10,19 @@ namespace Gilded.Rose.Tests.Factories
     [TestFixture]
     public class StockFactoryTest
     {
+
+
+        [SetUp]
+        public void Init()
+        {
+            DependencyResolver.Setup();
+        }
+
         [TestCase("NormalItem", typeof(NormalItemCalculator))]
         [TestCase("Sulfuras", typeof(SulfurasCalculator))]
         public void ShouldFactoryReturnCalculator(string stockItemName, Type type )
         {
-            var sut = new CalculatorsFactory();
+            var sut = DependencyResolver.Get<ICalculatorsFactory>();
 
             var calculator = sut.GetInstance(stockItemName);
 

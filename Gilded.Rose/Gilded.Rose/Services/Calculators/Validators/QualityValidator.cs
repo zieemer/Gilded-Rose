@@ -1,6 +1,6 @@
 ﻿using Gilded.Rose.Conracts;
 
-namespace Gilded.Rose.Services.Validators
+namespace Gilded.Rose.Services.Calculators.Validators
 {
     public class QualityValidator : IQualityValidator
     {

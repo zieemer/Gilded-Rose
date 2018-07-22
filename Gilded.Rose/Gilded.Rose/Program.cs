@@ -9,7 +9,9 @@ namespace Gilded.Rose
     {
         static void Main(string[] args)
         {
-            var stockUpdater = new StockUpdater();
+            DependencyResolver.Setup();
+            var stockUpdater = DependencyResolver.Get<IStockUpdater>();
+
             var items = new List<StockItem>()
             {
                 new StockItem("AgedBrie",1,1),

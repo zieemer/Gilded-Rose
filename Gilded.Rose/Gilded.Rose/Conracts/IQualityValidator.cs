@@ -1,6 +1,6 @@
 ﻿namespace Gilded.Rose.Conracts
 {
-    internal interface IQualityValidator
+    public interface IQualityValidator
     {
         int ValidateQuality(int quality);
     }

@@ -1,5 +1,6 @@
 ﻿using Gilded.Rose.Models;
 using Gilded.Rose.Services;
+using Gilded.Rose.Services.Calculators;
 using NUnit.Framework;
 
 
@@ -11,21 +12,23 @@ namespace Gilded.Rose.Tests.Services
     [TestFixture]
     public class ConjuretCalulatorTests
     {
-       
 
 
-        [TestCase(2, 2, 1,0)]
+
+        [TestCase(2, 2, 1, 0)]
         [TestCase(-1, 5, -2, 1)]
 
-        public void ShouldCalulateInventory(int sellIn, int quality, int resultSellIn, int resultQuality)
+        public void ShouldCalulateInventory(int sellIn, int quality, int expSellIn, int expQuality)
         {
-            var item = new StockItem("Conjured", sellIn, quality);
 
-            var sut = new StockUpdater();
-            sut.Update(item);
 
-            Assert.AreEqual(resultSellIn, item.SellIn);
-            Assert.AreEqual(resultQuality, item.Quality);
+            var sut = new ConjuredCalculator();
+
+            var resultQuality = sut.CalculateQuality(sellIn, quality);
+            var resultSellIn = sut.CalculateSellIn(sellIn);
+
+            Assert.AreEqual(expSellIn, resultSellIn);
+            Assert.AreEqual(expQuality, resultQuality);
 
         }
 
